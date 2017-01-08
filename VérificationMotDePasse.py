@@ -1,0 +1,10 @@
+#! /usr/bin/python
+# -*-coding:Latin-1 -*
+import sys
+
+if __name__ == "__main__":
+	print("Veuillez entrer le mot de passe de validation de cette épreuve... \n");
+	motDePasse ="";
+	motDePasse = raw_input();
+	sys.argv=[1, motDePasse];
+	execfile("/home/tom/Bureau/ProjetLong/CheckChallenge.py");
