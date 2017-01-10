@@ -1,4 +1,5 @@
 #! /usr/bin/python
+
 import sys
 from random import *
 import numpy
@@ -45,7 +46,7 @@ def genererMatrice():
 	while not(estInversible(result)):
 		d=randint(0,25);
 		result=a*d-b*c;
-	matrice = numpy.array([[a, b],  [c, d]]);
+	matrice = numpy.array([[a, b], [c, d]]);
 	return matrice;
 		
 
@@ -56,7 +57,7 @@ def produitToutesLesPaires(matriceChiffrement, paires):
 	l = list();
 	for couples in paires:
 		couples = numpy.asarray(couples);
-		result = numpy.dot(couples, matriceChiffrement);
+		result = numpy.dot(matriceChiffrement, couples);
 		result[0] = result[0]%26;
 		result[1] = result[1]%26;
 		result = result.tolist();
@@ -71,8 +72,8 @@ def couplesEnCaracteres(leProduit):
 	return string;
 
 if __name__=="__main__":
-	contenuEntree = open("TestInputChiffreurHill.txt");
-	contenuSortie = open("TestOutputChiffreurHill.txt", "w");
+	contenuEntree = open("InputChiffreurHill.txt");
+	contenuSortie = open("OutputChiffreurHill.txt", "w");
 	
 	contenuEntree = contenuEntree.read();
 	l = list(contenuEntree);
