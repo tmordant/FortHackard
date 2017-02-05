@@ -7,7 +7,7 @@ from Crypto.Cipher import AES
 
 if __name__ == "__main__":
 	socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-	socket.bind(('', 15555))
+	socket.bind(('', 65530))
 	
 	
 	while True:
@@ -29,7 +29,7 @@ if __name__ == "__main__":
 		        client.send("B = " + str(B));
 		        vecteurInitialisationCommun = "C'est l'IVcommun";
 		        chiffrement = AES.new(str(secretCommun).zfill(16), AES.MODE_CBC, vecteurInitialisationCommun);
-		        texteChiffre = chiffrement.encrypt("Ceci est le vrai flag permettant de valider l'épreuve : MITMAttackResistance".zfill(80));
+		        texteChiffre = chiffrement.encrypt("Ceci est le flag permettant de valider l'épreuve : Diffi3H3llm4nFl4g".zfill(80));
 		        client.send("C = " + texteChiffre);
 		        
 	print "Close"
